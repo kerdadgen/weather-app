@@ -1,0 +1,29 @@
+<div class="weather-container" *ngIf="weatherData">
+    <div class="weather-header">
+      <h2>{{ weatherData.city }}</h2>
+    </div>
+    
+    <div class="weather-info">
+      <div class="temperature">
+        <span class="value">{{ weatherData.temperature }}°C</span>
+      </div>
+      
+      <div class="wind">
+        <span class="label">Vent:</span>
+        <span class="value">{{ weatherData.windspeed }} km/h</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="no-data" *ngIf="!weatherData && !loading">
+    <p>Recherchez une ville pour voir la météo</p>
+  </div>
+  
+  <div class="loading" *ngIf="loading">
+    <p>Chargement des données météo...</p>
+  </div>
+  
+  <div class="error" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  

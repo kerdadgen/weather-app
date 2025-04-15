@@ -1,0 +1,22 @@
+<div class="search-container">
+    <input 
+      type="text" 
+      [formControl]="searchControl" 
+      placeholder="Entrez le nom d'une capitale..." 
+      class="search-input"
+    />
+    
+    <div *ngIf="cities.length > 0" class="results-container">
+      <div 
+        *ngFor="let city of cities" 
+        class="city-item"
+        (click)="selectCity(city)"
+      >
+        {{ city.name }}, {{ city.country }}
+      </div>
+    </div>
+    
+    <div *ngIf="loading" class="loading">
+      Recherche en cours...
+    </div>
+</div>
