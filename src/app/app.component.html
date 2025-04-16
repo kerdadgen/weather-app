@@ -1,0 +1,14 @@
+<div class="app-container">
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    
+    <main>
+      <app-search-bar (citySelected)="onCitySelected($event)"></app-search-bar>
+      <app-weather-display [selectedCity]="selectedCity"></app-weather-display>
+    </main>
+    
+    <footer>
+      <p>Application météo</p>
+    </footer>
+</div>
